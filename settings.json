@@ -1,0 +1,48 @@
+[
+    {
+        "type": "title",
+        "title": "Game Of Life"
+    },
+    {
+        "type": "string",
+        "title": "board",
+        "desc": "name of board",
+        "section": "gol",
+        "key": "board"
+    },
+    {
+        "type": "numeric",
+        "title": "world Size",
+        "desc": "set the size of this world (default is 23)",
+        "section": "gol",
+        "key": "world_size"
+    },
+    {
+        "type": "numeric",
+        "title": "cell Size",
+        "desc": "set the size of each cell (default is 23)",
+        "section": "gol",
+        "key": "unit"
+    },
+    {
+        "type": "numeric",
+        "title": "generation speed",
+        "desc": "(per second)",
+        "section": "gol",
+        "key": "speed"
+    },
+    {
+        "type": "numeric",
+        "title": "Birth Rule",
+        "desc": "(standard default is 3)",
+        "section": "gol",
+        "key": "birth"
+    },
+    {
+        "type": "numeric",
+        "title": "Survival Rule",
+        "desc": "(standard default is 23)",
+        "section": "gol",
+        "key": "survival"
+    }
+]
