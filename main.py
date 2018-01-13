@@ -1,22 +1,32 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ObjectProperty
-from kivy.graphics.vertex_instructions import Ellipse
+from kivy.graphics.vertex_instructions import Ellipse, Rectangle, RoundedRectangle, Triangle
 from kivy.graphics.context_instructions import Color
 from kivy.clock import Clock
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.core.window import Window
 
-from lifegrid import twenty_three, blank_grid
 
 import os
 import pickle
 
-# import random
+import random
 
 
-BOARDS = {"TWENTY_THREE": twenty_three, "BLANK": blank_grid()}
+def blank_grid(n=23):
+    if n % 2 == 0:
+        # odd numbers only!
+        n += 1
+    grid = [[0 for x in range(n)] for y in range(n)]
+    center = int((n-1)*.5)
+    # mark the center square
+    grid[center][center] = 1
+    return grid
+
+
+BOARDS = {"TWENTY_THREE": blank_grid(23), "BLANK": blank_grid()}
 
 
 LIFE, DEATH = 1, 0
@@ -216,12 +226,14 @@ class golBoxLayout(BoxLayout):
                     life_signs += state
                     if state == LIFE:
                         # Color(R, G, B, opacity)
+                        # Color(1, 0, 1, 1)
                         Color(0, 1, 0, .9)  # green
+                        # Color(.9, 0, 0, .9)
                         # Color(random.random(), random.random(), random.random(), .9)
                         Ellipse(pos=(y*u, x*u), size=(u, u))
                     else:
                         Color(0, 0, 1, .9)  # blue
-                        #Color(0, 0, 0, .9)
+                        # Color(0, 0, 0, .9)
                         Ellipse(pos=(y*u, x*u), size=(u, u))
         if life_signs == 0:
             Clock.unschedule(self.refresh_layout)
@@ -286,8 +298,10 @@ class GameOfLife(App):
                 birth = self.config.get('gol', 'birth')
                 survival = self.config.get('gol', 'survival')
                 w = int(self.config.get('gol', 'world_size'))
-                if b == 'BLANK':
+                if b == 'BLANK' and w > 8:
                     last_board = blank_grid(w)
+                else:
+                    last_board = blank_grid(23)
             except Exception as e:
                 last_gen = 0
                 u, s = 23, 1
