@@ -16,20 +16,17 @@ A cell is "Born" if it has exactly 2 or 3 neighbours,
 
 ## why (this)? 
 
-for sum of us, numbers are fun
+why not?
 
 very interesting patterns evolve from symmetrically balanced seeds.
 
 
-## seeds ?
+## seed ?
 
-Simply put, a seed is the starting pattern.
+a seed is the originating pattern.
 
 to create a seed:
- 1. It's recommended that you start at the very center of the grid.
- 2. touch/click to flip a cell between life and death.
- 3. press play to watch your seed evolve.
 
-
-for accuracy in measurement, do not to interfere with the evolution of your seed.
+ 1. touch/click the grid to flip a cell between life and death.
+ 2. press play to watch the seed evolve.
 

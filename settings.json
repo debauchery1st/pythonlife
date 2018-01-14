@@ -4,6 +4,13 @@
         "title": "Game Of Life"
     },
     {
+        "type": "bool",
+        "title": "RESET",
+        "desc": "restart from seed after exit",
+        "section": "gol",
+        "key": "start_over"
+    },
+    {
         "type": "string",
         "title": "board",
         "desc": "name of board",
@@ -44,5 +51,26 @@
         "desc": "(standard default is 23)",
         "section": "gol",
         "key": "survival"
+    },
+    {
+        "type": "string",
+        "title": "Life Color",
+        "desc": "R,G,B,a",
+        "section": "gol",
+        "key": "life_rgba"
+    },
+    {
+        "type": "string",
+        "title": "Death Color",
+        "desc": "R,G,B,a",
+        "section": "gol",
+        "key": "death_rgba"
+    },
+    {
+        "type": "bool",
+        "title": "randomize Life Color",
+        "desc": "meritocratic diversity",
+        "section": "gol",
+        "key": "f_d"
     }
 ]
