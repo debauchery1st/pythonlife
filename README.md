@@ -30,3 +30,8 @@ to create a seed:
  1. touch/click the grid to flip a cell between life and death.
  2. press play to watch the seed evolve.
 
+
+## Downloads
+
+mac os x 
+https://github.com/debauchery1st/pythonlife/raw/master/dist/pylife-0.1.1-maxosx.dmg
